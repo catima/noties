@@ -1,0 +1,28 @@
+{
+  "name": "noties",
+  "version": "0.1.0",
+  "description": "Small but flexible Javascript library for rendering footnotes, endnotes and comments.",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jurtn/noties.git"
+  },
+  "keywords": [
+    "footnotes",
+    "endnotes",
+    "comments"
+  ],
+  "author": "Jason Urton",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/jurtn/noties/issues"
+  },
+  "homepage": "https://github.com/jurtn/noties#readme",
+  "devDependencies": {
+    "webpack": "^3.10.0"
+  }
+}
