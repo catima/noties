@@ -1,5 +1,5 @@
 module.exports = {
-  Noties: function(notes, referenceNodes, noteView, options={}){
+  Noties: function(notes, referenceNodes, noteView, referenceFormatter=null, options={}){
     return {
       render: function(){
         var nts = typeof(notes) == 'function' ? notes() : notes;
@@ -15,9 +15,9 @@ module.exports = {
         var notesHtml = [];
         for (var i=0; i < n; i++){
           var nt = nts[i].getAttribute('data-note');
-          notesHtml.push('<p><sup>'+(i+1)+'</sup> ' + nt + '</p>');
+          notesHtml.push('<p><sup>'+ (referenceFormatter ? referenceFormatter(i+1) : (i+1)) +'</sup> ' + nt + '</p>');
           var refnd = refnds[i];
-          refnd.innerHTML = '<sup>'+(i+1)+'</sup>';
+          refnd.innerHTML = '<sup>'+ (referenceFormatter ? referenceFormatter(i+1) : (i+1)) +'</sup>';
         }
 
         if (vw) vw.innerHTML = notesHtml.join('');
